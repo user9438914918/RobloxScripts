@@ -10,6 +10,7 @@ function M.HasProperty(instance :Instance, property :string) :boolean
 		local PropExists = pcall(function()
 			return Clone[property]
 		end)
+		Clone:Destroy()
 		if PropExists then
 			if not Cache[instance.ClassName] then
 				Cache[instance.ClassName] = {}
